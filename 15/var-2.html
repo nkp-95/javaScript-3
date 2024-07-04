@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+</head>
+<body>
+  <h2>콘솔확인</h2>
+  <script>
+
+
+    function addNumber(){
+      var sum = 10 + 20;
+      // console.log('지역변수 : ' + sum);  //지역변수(블록내)
+      total = 10 * 20;  //전역변수 (블럭 밖에서도 사용 가능)
+    }
+    addNumber();
+    console.log(total);
+    // console.log(sum);   // 블록 밖(오류생김) 함수안에서는 var 지역변수 됨
+    for(var i = 0; i < 5; i++){     //(for(let i = 0; i < 5; i++){ )let은 블럭 안에서만 사용가능 ECMA6문
+      total += i;         //여기서 var로 선언하면 외부에서도 변경가능
+    }
+
+    console.log(i);  //let 범위 for, if 블럭 안으로 한정
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window객체</title>
+</head>
+<body>
+  <p>문서를 열면 팝업 창이 표시됩니다.</p>
+  <script>
+/*
+객체(obhect): 프로그램에서 인식할수있는 모든 대상
+  -구성요소: 프로퍼티 - 객체의 특징이나 속성
+              메서드 - 객체에서 할수 있는 동작이나 기능
+  -사용방법: new 객체명
+              객체명.프로퍼티, 객체명.메서드
+
+내장 객체
+    - window, document, navigator, history, location, screen
+
+
+*/
+
+function openwin(url, pop, width, height) {
+    // name   : 팝업윈도우_이름
+    // width  : 팝업창 가로 크기
+    // height : 팝업창 세로 크기
+	
+    // window.screenX : 현재 스크린에서 브라우저 좌측상단 X좌표
+    // window.screenY : 현재 스크린에서 브라우저 좌측상단 Y좌표
+    var winPosX = window.screenX;
+    var winPosY = window.screenY;
+	
+    // window.screen.width  : 윈도우의 가로 크기
+    // window.screen.height : 윈도우의 세로 크기
+    var screenWidth  = window.screen.width;
+    var screenHeight = window.screen.height; 
+
+    var popupX;
+    var popupY;
+
+    if (winPosX > 0) {
+        if (winPosX < screenWidth) // 1번 : 2번 순서에서 1번 스크린이면  
+            popupX = Math.round((screenWidth/2) - (popupWidth/2));
+        else                       // 1번 : 2번 순서에서 2번 스크린이면
+            popupX = Math.round(screenWidth + (screenWidth/2) - (popupWidth/2)) ;
+    } else {
+        // 2번 : 1번 순서에서 2번 스크린이면
+        popupX = -Math.round((screenWidth/2) + (popupWidth/2));
+    
+	
+    if (winPosY > 0) {
+        if (winPosY < screenHeight) // 1번 : 2번 순서에서 위쪽 스크린이면  
+            popupY = Math.round((screenHeight/2) - (popupHeight/2));
+        else                        // 1번 : 2번 순서에서 아래쪽 스크린이면
+            popupY = Math.round(screenHeight + (screenHeight/2)-(popupHeight/2));
+    } else {
+        // 2번 : 1번 순서에서 위쪽 스크린이면
+        popupY = -Math.round((screenHeight/2)+(popupHeight/2));
+    }
+
+    var featureWindow = "width=" + popupWidth + ", height="+popupHeight
+                    + ", left=" + popupX + ", top=" + popupY;
+
+    return window.open(url, pop, featureWindow);
+    }
+  }
+
+  openCenter("notice.html", "pop", 500, 400);
+  </script>
+</body>
+</html>

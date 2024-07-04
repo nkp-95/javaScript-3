@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제</title>
+</head>
+<body>
+  <script>
+    var num1 = parseInt(prompt("숫자1 입력", 50));
+    var num2 = parseInt(prompt("숫자2 입력", 50));
+    
+    // function compareTwo(x, y){
+    //   if(x === y){
+    //     alert(x + "와 " + y + "같습니다.");
+    //   }else if(x >= y){
+    //     alert(x + "이(가)" + y + "보다 큽니다.");
+    //   }else{
+    //     alert(x + "이(가)" + y + "보다 작습니다.");
+    //   }
+    // };
+    // compareTwo(num1, num2);
+
+    (function(x, y){
+      if(x === y){
+        alert(x + "와 " + y + "같습니다.");
+      }else if(x >= y){
+        alert(x + "이(가)" + y + "보다 큽니다.");
+      }else{
+        alert(x + "이(가)" + y + "보다 작습니다.");
+      }
+    }(num1, num2));
+  </script>
+</body>
+</html>

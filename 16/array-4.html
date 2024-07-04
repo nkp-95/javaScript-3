@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array객체의 메서드</title>
+</head>
+<body>
+  <p>splice 메서드 사용하기</p>
+  <script>
+    //인수가 한개일 경우
+    var numbers = [1, 2, 3, 4, 5];
+    var newNumbers = numbers.splice(2);  
+
+    document.write("변경된 배열 : " + numbers + "<br>");
+    document.write("반환된 배열 : " + newNumbers + "<br>");
+
+    //인수가 2개일 경우
+    var study = ["html", "css", "javascript", "jsp"];
+    var newStudy = study.splice(2, 1);  //(2) 는 (2, 2)와 같음
+    document.write("반환된 배열 : " + newStudy + "<br>");
+    document.write("변경된 배열 : " + study + "<br>");
+
+    //인수가 3개일 경우 [html,css,jsp]
+  var newStudy2 = study.splice(2, 1, 'js');//삭제,  (2, 0, 'js');=>추가
+  document.write("반환된 배열 : " + newStudy2+ "<br>");
+  document.write("변경된 배열 : " + study + "<br>");
+
+  //splice 리턴값은 삭제된 값이 리턴 됨
+  //원본 배열은 변경됨 두번째 파라미터에 따라 추가 변경 가능
+  </script>
+</body>
+</html>

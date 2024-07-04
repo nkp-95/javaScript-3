@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수와 호이스팅</title>
+</head>
+<body>
+  <h1>콘솔확인</h1>
+  <script>
+    var x = 10;  //블럭 밖에서 선언하면 전역변수
+
+    function displayNumber(){
+      console.log("X is " + x);
+      console.log('Y is ' + y);     // let 선언시 호이스팅 문제 해결
+      let y = 20;       //호이스팅이 없는 변수
+    }
+    displayNumber();
+  </script>
+</body>
+</html>

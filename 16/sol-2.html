@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제2</title>
+  <style>
+    #container{
+      width: 200px;
+      margin: 50px auto;
+    }
+    button{
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 20px 30px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="container">
+    <button id="bttn">현재 시간 보기</button>
+  </div>
+  <script>
+    //여기에 코드 작성
+    // function winCenter(url, pop, x, y){       //(win = 'pop', x=400, y=200)
+    //   //윈도우 시작점
+    //   var left = (screen.availWidth - x) / 2;
+    //   var top = (screen.availHeight - y) / 2;
+    //   var openWindow = "left= " + left + ", top= " + top + ", width= " + 400 + ", height= " + 200;
+    //   window.open(url, pop, openWindow)
+    // }
+    // document.querySelector("#bttn").onclick = function() {
+    //   winCenter("sol-1.html", "pop", 400, 200);
+    // }
+
+    //#############################################################################
+    function displayTime(win = 'pop', w=400, h=200){
+      //윈도우 너비 시작점
+      var screenLeft = window.screenLeft || window.scrrenX;
+      //윈도우 높이 시작점
+      var screenTop = window.screenTop || window.screenY;
+      //팝업을 띄우는 부모 윈도우의 너비 높이 기준
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+      var screenHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      var left = screenLeft + (screenWidth - w) / 2;
+      var top = screenTop + (screenHeight - h) / 2;
+      var opt = 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left;
+
+      window.open("current.html", win, opt);
+    }
+    document.querySelector('#bttn').onclick = displayTime;
+//######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+    // function openCenter(doc, win, w, h){
+    //   var left = (screen.availWidth - w ) / 2 // 팝업창의 왼쪽 좌표
+    //   var top = (screen.availHeight - h ) / 2 // 팝업창의 위쪽 좌표
+    //   var opt = "left=" +left + ", top=" +top + ", width=" +w + ", height=" +h;
+    //   window.open(doc, win, opt);
+    // }
+    // document.querySelector("#bttn").onclick = function() {
+    //   openCenter("sol-1.html", "pop", 400, 200);
+    // }
+    
+  </script>
+</body>
+</html>

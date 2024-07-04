@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제</title>
+</head>
+<body>
+  <script>
+    var x = parseInt(prompt("숫자 입력", 10));
+    var y = parseInt(prompt("숫자 입력", 5));
+    (function(x, y){
+      if(x === y){
+        sum = x * y;
+      }else{
+        sum = x + y;
+      }
+    }(x, y));
+    console.log(sum);
+  </script>
+</body>
+</html>
